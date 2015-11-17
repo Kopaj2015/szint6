@@ -1,5 +1,16 @@
 <template name="defaultLayout">
     {{> defaultHeader }}
-    {{> yield }}
-    {{> defaultFooter }}
+
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                {{> yield }}
+            </div>
+
+            {{> sideBar }}
+        </div>
+    </div>
+
 </template>
