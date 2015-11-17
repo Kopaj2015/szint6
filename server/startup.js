@@ -15,15 +15,17 @@ Meteor.startup(function () {
     /*
      * Init admin
      */
-    Accounts.createUser({
-        username: 'admin',
-        email: 'admin@hatodik.hu',
-        password: 'admin',
-        profile: {
-            isAdmin: true,
-            points: 0
-        }
-    });
+    if (Meteor.users.find().count() === 0) {
+        Accounts.createUser({
+            username: 'admin',
+            email: 'admin@hatodik.hu',
+            password: 'admin',
+            profile: {
+                isAdmin: true,
+                points: 0
+            }
+        });
+    }
 
 
 
