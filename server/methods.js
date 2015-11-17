@@ -1,4 +1,8 @@
-Meteor.methods(function () {
-    // TODO methods
+Meteor.methods({
+    addCategory: function(name) {
+        Categories.insert({
+            name: name
+        })
+    }
 });
 

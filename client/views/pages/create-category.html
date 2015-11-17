@@ -1,0 +1,19 @@
+<template name="createCategory">
+
+    <form>
+        <label>Add Category</label>
+        <input type="text" name="name" placeholder="Category...">
+        <input type="submit" name="add-category">
+    </form>
+
+    <ul class="categories">
+      {{#if hasCategories}}
+        {{#each categories}}
+          <li>{{name}}</li>
+        {{/each}}
+      {{else}}
+          <li>No categories.</li>
+      {{/if}}
+    </ul>
+
+</template>
