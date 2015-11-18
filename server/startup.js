@@ -10,6 +10,10 @@ Meteor.publish('bets', function() {
     return Bets.find({});
 });
 
+Meteor.publish('users', function() {
+    return Meteor.users.find({});
+});
+
 Meteor.startup(function () {
 
     /*

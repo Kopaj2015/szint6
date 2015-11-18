@@ -1,0 +1,24 @@
+<template name="listUsers">
+
+    <div class="row">
+        <a href="{{pathFor 'createUser'}}" class="btn btn-sm btn-primary newUserBtn">Felhasználó létrehozása</a>
+    </div>
+
+    {{#if hasUsers}}
+        {{#each users}}
+            <div class="row">
+                <div class="col-md-6">
+                {{username}}
+                </div>
+                <div class="col-md-6">
+                    <a href="#" name="{{_id}}" class="btn btn-xs btn-danger deleteBtn">Törlés</a>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <li>No users.</li>
+    {{/if}}
+
+
+
+</template>

@@ -11,7 +11,7 @@ Template.newEvent.events({
     'submit': function (event) {
         event.preventDefault();
 
-        if(event.target.title.value) {
+        if(event.target.title.value != '') {
             Meteor.call('addNewEvent', event.target);
         }
 

@@ -13,6 +13,9 @@ Meteor.methods({
             winner: null,
             category: target.category.value
         });
+    },
+    removeUser: function (givenId) {
+        Meteor.users.remove({_id: givenId});
     }
 });
 
