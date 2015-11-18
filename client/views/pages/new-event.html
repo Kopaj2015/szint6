@@ -4,19 +4,19 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="title">Elnevezés</label><br />
-                <input type="text" name="title" />
+                <input type="text" class="form-control" name="title"  />
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <label for="date">Időpont (YYYY-MM-DD hh:mm:ss)</label><br />
-                <input type="text" name="date" />
+                <input type="text" class="form-control" name="date" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <label for="part1">Résztvevő #1</label><br />
-                <select name="part1">
+                <select name="part1" class="form-control">
                     {{#if hasUsers}}
                         {{#each users}}
                             <option value="{{_id}}">{{username}}</option>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="part2">Résztvevő #2</label><br />
-                <select name="part2">
+                <select name="part2" class="form-control">
                     {{#if hasUsers}}
                         {{#each users}}
                             <option value="{{_id}}">{{username}}</option>
@@ -44,10 +44,10 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="category">Kategória</label><br />
-                <select name="category">
+                <select name="category" class="form-control">
                     {{#if hasCategories}}
                         {{#each categories}}
-                            <option value="{{name}}">{{name}}</option>
+                            <option value="{{_id}}">{{name}}</option>
                         {{/each}}
                     {{else}}
                         <li>No categories.</li>
@@ -55,6 +55,8 @@
                 </select>
             </div>
         </div>
+
+        <br />
 
         <div class="row">
             <div class="col-md-12">

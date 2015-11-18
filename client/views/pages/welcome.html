@@ -1,3 +1,22 @@
 <template name="welcome">
-    <p>Welcome HTML. Alapból események listázása fasza.</p>
+    <h1>Események</h1>
+    {{#each categories}}
+        <h2>{{name}}</h2>
+        <table class="table">
+            <tr>
+                <th>Cím</th>
+                <th>Résztvevők</th>
+                <th>Győztes</th>
+                <th>Kategória</th>
+            </tr>
+        {{#each events _id}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{part1}} - {{part2}}</td>
+                <td>{{winner}}</td>
+                <td>{{getCategory category}}</td>
+            </tr>
+        {{/each}}
+        </table>
+    {{/each}}
 </template>

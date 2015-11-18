@@ -4,21 +4,30 @@
         <a href="{{pathFor 'createUser'}}" class="btn btn-sm btn-primary newUserBtn">Felhasználó létrehozása</a>
     </div>
 
-    {{#if hasUsers}}
-        {{#each users}}
-            <div class="row">
-                <div class="col-md-6">
-                {{username}}
-                </div>
-                <div class="col-md-6">
-                    <a href="#" name="{{_id}}" class="btn btn-xs btn-danger deleteBtn">Törlés</a>
-                </div>
-            </div>
-        {{/each}}
-    {{else}}
-        <li>No users.</li>
-    {{/if}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Felhasználónév</th>
+            <th>Email</th>
+            <th>Műveletek</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if hasUsers}}
+            {{#each users}}
 
-
+                <tr>
+                    <td>{{username}}</td>
+                    <td>{{#each emails}}{{address}}{{/each}}</td>
+                    <td><a href="#" name="{{_id}}" class="btn btn-xs btn-danger deleteBtn">Törlés</a></td>
+                </tr>
+            {{/each}}
+        {{else}}
+            <tr>
+                <td>No users.</td>
+            </tr>
+        {{/if}}
+        </tbody>
+    </table>
 
 </template>

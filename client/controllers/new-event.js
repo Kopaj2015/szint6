@@ -16,10 +16,15 @@ Template.newEvent.helpers({
 Template.newEvent.events({
     'submit': function (event) {
         event.preventDefault();
-
-        if(event.target.title.value != '') {
-            Meteor.call('addNewEvent', event.target);
+        if(event.target.title.value) {
+            Meteor.call(
+                'addNewEvent',
+                event.target.title.value,
+                event.target.part1.value,
+                event.target.part2.value,
+                event.target.category.value
+            );
+            Router.go('/');
         }
-
     }
 });
