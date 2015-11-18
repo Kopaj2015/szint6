@@ -35,7 +35,7 @@ Template.adminCreateUser.events({
                 return console.error('Accounts.createUser error!');
             }
 
-            Router.go('login');
+            Router.go('listUsers');
         });
     }
 });
