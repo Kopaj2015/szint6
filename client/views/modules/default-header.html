@@ -5,15 +5,11 @@
             <nav class="blog-nav">
                 <a class="blog-nav-item active" href="/">Események</a>
 
-                {{#if isAdmin}}
-                    <a class="blog-nav-item" href="/new_event">Esemény létrehozása</a>
+                {{#if currentUser.profile.isAdmin}}
+                    <a class="blog-nav-item" href="{{pathFor 'newEvent'}}">Esemény létrehozása</a>
+                    <a class="blog-nav-item" href="{{pathFor 'createCategory'}}">Kategóriák</a>
                 {{/if}}
 
-                <!--
-                <a class="blog-nav-item" href="#">Press</a>
-                <a class="blog-nav-item" href="#">New hires</a>
-                <a class="blog-nav-item" href="#">About</a>
-                -->
             </nav>
         </div>
     </div>
