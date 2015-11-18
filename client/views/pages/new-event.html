@@ -17,7 +17,13 @@
             <div class="col-md-12">
                 <label for="part1">Résztvevő #1</label><br />
                 <select name="part1">
-                    <option value="6">Hatodik</option>
+                    {{#if hasUsers}}
+                        {{#each users}}
+                            <option value="{{_id}}">{{username}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option value="null">No users :(</option>
+                    {{/if}}
                 </select>
             </div>
         </div>
@@ -25,7 +31,13 @@
             <div class="col-md-12">
                 <label for="part2">Résztvevő #2</label><br />
                 <select name="part2">
-                    <option value="6">Hatodik</option>
+                    {{#if hasUsers}}
+                        {{#each users}}
+                            <option value="{{_id}}">{{username}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option value="null">No users :(</option>
+                    {{/if}}
                 </select>
             </div>
         </div>
