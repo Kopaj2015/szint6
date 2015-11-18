@@ -1,9 +1,11 @@
 Template.login.helpers({
-
+    username: function() {
+        return Meteor.user().username();
+    }
 });
 
 Template.login.events({
-    'submit': function(event) {
+    'submit form.login-form': function(event) {
         event.preventDefault();
 
         var userName = event.target.username.value;
@@ -15,5 +17,10 @@ Template.login.events({
             }
             Router.go('welcome');
         });
+    },
+    'click .logout' : function(event) {
+        event.preventDefault();
+        Meteor.logout();
+        Router.go('/');
     }
 });

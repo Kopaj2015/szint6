@@ -1,0 +1,20 @@
+<template name="login">
+    <div class="sidebar-module sidebar-module-inset">
+    {{#if currentUser}}
+        <h4>Üdv, {{currentUser.username}}</h4>
+        {{#unless currentUser.profile.isAdmin}}
+        <p>Pontjaim: <em>{{currentUser.profile.points}}</em></p>
+        {{/unless}}
+        <p>
+            <a class="logout">Kijelentkezés</a>
+        </p>
+    {{else}}
+        <h4>Üdvözlet látogató!</h4>
+        <form class="login-form">
+            <input type="text" name="username" placeholder="Felhasználónév" />
+            <input type="password" name="password" placeholder="Jelszó" />
+            <input type="submit" name="login_btn" value="Bejelentkezés" />
+        </form>
+    {{/if}}
+    </div>
+</template>
