@@ -1,0 +1,55 @@
+<template name="newEvent">
+
+    <form>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="title">Elnevezés</label><br />
+                <input type="text" name="title" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="date">Időpont (YYYY-MM-DD hh:mm:ss)</label><br />
+                <input type="text" name="date" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="part1">Résztvevő #1</label><br />
+                <select name="part1">
+                    <option value="6">Hatodik</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="part2">Résztvevő #2</label><br />
+                <select name="part2">
+                    <option value="6">Hatodik</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="category">Kategória</label><br />
+                <select name="category">
+                    {{#if hasCategories}}
+                        {{#each categories}}
+                            <option value="{{name}}">{{name}}</option>
+                        {{/each}}
+                    {{else}}
+                        <li>No categories.</li>
+                    {{/if}}
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" name="submit_btn" value="Létrehozás"/>
+            </div>
+        </div>
+
+    </form>
+
+</template>
