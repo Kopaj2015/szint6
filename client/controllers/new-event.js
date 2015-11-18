@@ -4,6 +4,12 @@ Template.newEvent.helpers({
     },
     hasCategories: function() {
         return Categories.find({}).count();
+    },
+    users: function() {
+        return Meteor.users.find({});
+    },
+    hasUsers: function() {
+        return Meteor.users.find({}).count();
     }
 });
 
